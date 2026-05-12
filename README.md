@@ -30,7 +30,7 @@ Lista de compras inteligente.
    `npx expo start`
 
 ## Video demo
-[Ver video demo](./assets/images/demo/ScreenRecording_05-10-2026%2013-20-16_1.MP4)
+[Ver video demo](https://drive.google.com/file/d/1T2OPyfgeBKhaObU8qudYlzMvAonBbK65/view?usp=sharing)
 
 ## Autor
 - Matías Goni
