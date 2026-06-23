@@ -1,12 +1,13 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { View, Text, TouchableOpacity, FlatList, StyleSheet } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from '@react-navigation/native';
 import ProductItem from '../components/ProductItem';
 import { COLORS } from '../constants/colors';
+import useProductsStore from '../store/useProductsStore';
 
 function HomeScreen({ navigation }) {
-    const [products, setProducts] = useState([]);
+    const { products, setProducts, removeProduct } = useProductsStore();
 
     const loadProducts = async () => {
         try {
@@ -31,7 +32,7 @@ function HomeScreen({ navigation }) {
                 JSON.stringify(updatedProducts)
             );
 
-            setProducts(updatedProducts);
+            removeProduct(id);
         } catch (error) {
             console.error('Error al eliminar producto', error);
         }
